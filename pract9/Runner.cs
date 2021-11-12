@@ -12,7 +12,7 @@ namespace pract9
             Random rnd = new Random();
             for (int i = 0; i < 8; i++)
             {
-                matrix[i, 2] = rnd.Next(1, 50).ToString();
+                matrix[i, 2] = rnd.Next(1, 30).ToString();
             }
             for (int i = 0; i < 8; i++)
             {
