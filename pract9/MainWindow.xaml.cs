@@ -48,6 +48,7 @@ namespace pract9
                 runner[i]._counter = (i + 1);
                 counter += runner[i]._result;
             }
+            counter /= 8;
             string[,] matrix = new string[8, 3];
             for (int j=0; j<3; j++)
             {
