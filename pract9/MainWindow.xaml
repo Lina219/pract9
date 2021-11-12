@@ -11,7 +11,7 @@
             <MenuItem Header="Выход" Click="выход_Click"></MenuItem>
             <MenuItem Header="О программе" Click="справка_Click" ></MenuItem>
         </Menu>
-        <DataGrid x:Name="dataGrid" Margin="0,91,0,138" HorizontalAlignment="Center" Width="169" IsReadOnly="True"/>
+        <DataGrid x:Name="dataGrid" Margin="0,91,0,129" HorizontalAlignment="Center" Width="199"/>
         <Button Content="Рассчитать" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Click="Button_Click" FontSize="18" Width="169"/>
         <TextBlock HorizontalAlignment="Left" Margin="28,332,0,0" Text="Средний результат:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="result" HorizontalAlignment="Left" Margin="176,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="16" IsReadOnly="True"/>

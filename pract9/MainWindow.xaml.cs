@@ -24,7 +24,7 @@ namespace pract9
         {
             InitializeComponent();
         }
-        Runner runner = new Runner();
+        Runner[] runner;
 
         private void справка_Click(object sender, RoutedEventArgs e)
         {
@@ -38,13 +38,34 @@ namespace pract9
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string [,] matrix = new string [8,3];
-            matrix = runner.FillMatrix(matrix);
+            runner = new Runner[8];
+            Random rnd = new Random();
+            double counter = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                runner[i]._result = rnd.Next(1, 30);
+                runner[i]._name = "Имя " + (i + 1);
+                runner[i]._counter = (i + 1);
+                counter += runner[i]._result;
+            }
+            string[,] matrix = new string[8, 3];
+            for (int j=0; j<3; j++)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    switch (j)
+                    {
+                        case 0: matrix[i, j] = runner[i]._counter.ToString(); break;
+                        case 1: matrix[i, j] = runner[i]._name; break;
+                        case 2: matrix[i, j] = runner[i]._result.ToString(); break;
+                    }
+                }
+            }
             dataGrid.ItemsSource = VisualArray.ToDataTable(matrix).DefaultView;
             dataGrid.Columns[0].Header = "Номер";
             dataGrid.Columns[1].Header = "ФИО";
-            dataGrid.Columns[2].Header = "Результат";
-            result.Text = runner.AverageValue(matrix);
+            dataGrid.Columns[2].Header = "Результат (сек)";
+            result.Text = counter.ToString();
         }
     }
 }
